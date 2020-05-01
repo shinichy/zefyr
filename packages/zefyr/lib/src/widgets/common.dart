@@ -60,6 +60,7 @@ class _ZefyrLineState extends State<ZefyrLine> {
       Color cursorColor;
       switch (theme.platform) {
         case TargetPlatform.iOS:
+        case TargetPlatform.macOS:
           cursorColor ??= CupertinoTheme.of(context).primaryColor;
           break;
 
@@ -67,6 +68,8 @@ class _ZefyrLineState extends State<ZefyrLine> {
         case TargetPlatform.fuchsia:
           cursorColor = theme.cursorColor;
           break;
+        default:
+          throw UnimplementedError("Platform ${theme.platform} not implemented.");
       }
 
       content = EditableBox(
