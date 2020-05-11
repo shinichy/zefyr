@@ -210,8 +210,7 @@ class ZefyrController extends ChangeNotifier {
   TextEditingValue get plainTextEditingValue {
     return TextEditingValue(
       text: document.toPlainText(),
-      selection: selection,
-      composing: TextRange.collapsed(0),
+      selection: selection
     );
   }
 
